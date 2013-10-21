@@ -216,6 +216,10 @@ public:
     //! \returns The number of subfolders
     size_t get_subfolder_count() const
         { return get_hierarchy_table().size(); } 
+    //! \brief Check if folder has subfolders
+    //! \returns true if subfolders are present
+    bool has_subfolders() const
+    { return get_property_bag().read_prop<bool>(0x360A); }
     //! \copydoc search_folder::get_unread_message_count()
     size_t get_unread_message_count() const
         { return get_property_bag().read_prop<slong>(0x3603); }
