@@ -41,6 +41,31 @@ public:
     explicit contact(const node& n)
         : detail::itembase(n) { }
 
+    std::wstring get_display_name_prefix() const
+        { return get_property_bag().read_prop<std::wstring>(0x3a45); }
+    bool has_display_name_prefix() const
+        { return get_property_bag().prop_exists(0x3a45); }
+
+    std::wstring get_given_name() const
+        { return get_property_bag().read_prop<std::wstring>(0x3a06); }
+    bool has_given_name() const
+        { return get_property_bag().prop_exists(0x3a06); }
+
+    std::wstring get_middle_name() const
+        { return get_property_bag().read_prop<std::wstring>(0x3a44); }
+    bool has_middle_name() const
+        { return get_property_bag().prop_exists(0x3a44); }
+
+    std::wstring get_surname() const
+        { return get_property_bag().read_prop<std::wstring>(0x3a11); }
+    bool has_surname() const
+        { return get_property_bag().prop_exists(0x3a11); }
+
+    std::wstring get_generation() const
+        { return get_property_bag().read_prop<std::wstring>(0x3a05); }
+    bool has_generation() const
+        { return get_property_bag().prop_exists(0x3a05); }
+
 	// property access
     //! \brief Get the full name of this contact
     //! \sa [MS-OXOCNTC] 2.2.1.1.8
